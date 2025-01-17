@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscordBot工具1</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="mouse.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header, nav, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+            padding-bottom: 40px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .carousel {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-inner img {
+            width: 600px;
+            height: 400px;
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel-control.prev {
+            left: 0;
+        }
+        .carousel-control.next {
+            right: 0;
+        }
+        footer {
+            padding: 0px 0;
+            margin-top: 20px;
+        }
+        .center-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>7DTD'sTool <strong>七日殺工具網站</strong></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">程式分享</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item">
+                            <a href="discordbot.html">DiscordBot <span class="arrow">▶</span></a>
+                            <div class="sub-dropdown-content">
+                                <a href="discordbot-tool1.html">DiscordBot工具1</a>
+                                <a href="discordbot-tool2.html">DiscordBot工具2</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="7dtdtool.html">7dtdTool <span class="arrow">▶</span></a>
+                            <div class="sub-dropdown-content">
+                                <a href="7dtdtool-tool1.html">7dtdTool工具1</a>
+                                <a href="7dtdtool-tool2.html">7dtdTool工具2</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>軟體描述</h2>
+            <p>這個工具用於管理和自動化Discord伺服器的各種功能，包括機器人管理、消息自動化等。</p>
+        </section>
+        <section>
+            <h2 class="center-text">圖片展示</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <img src="images/1.jpg" alt="DiscordBot工具1圖片">
+                    <img src="images/2.jpg" alt="DiscordBot工具1圖片">
+                    <img src="images/1.jpg" alt="DiscordBot工具1圖片">
+                    <img src="images/2.jpg" alt="DiscordBot工具1圖片">
+                </div>
+                <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </section>
+        <section>
+            <h2>使用說明</h2>
+            <ol>
+                <li>下載並安裝DiscordBot工具1。</li>
+                <li>打開應用程式並登錄你的Discord帳戶。</li>
+                <li>配置機器人的設置，根據需求添加自動化任務。</li>
+                <li>保存設置並啟動機器人。</li>
+                <li>監控機器人的運行狀況，必要時進行調整。</li>
+            </ol>
+        </section>
+    </main>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-inner img');
+
+        function showSlide(index) {
+            const totalSlides = slides.length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            const offset = -currentSlide * 600; // 圖片寬度
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}px)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // 初始化顯示第一張圖片
+        showSlide(currentSlide);
+    </script>
+<script src="script.js"></script>
+</body>
+</html>

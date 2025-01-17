@@ -1,0 +1,9 @@
+/* 預設游標 */
+html, body, body * {
+    cursor: url('images/mouse.png'), auto !important;
+}
+
+/* 當滑鼠移到連結或按鈕上時更改游標樣式 */
+a, button, input, select, textarea, a *, button *, input *, select *, textarea * {
+    cursor: url('images/mouse2.png'), auto !important;
+}
