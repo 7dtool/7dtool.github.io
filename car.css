@@ -1,0 +1,32 @@
+.gif-container {
+    position: relative;
+    width: 100%;
+    height: 57px; /* 調整此高度以適應你的GIF尺寸 */
+    overflow: hidden;
+}
+
+.animated-gif {
+    position: absolute;
+    width: 100px; /* 調整此寬度以適應你的GIF尺寸 */
+    height: auto;
+    animation: moveGif 10s infinite;
+    transform: scaleX(-1); /* 初始反轉 */
+}
+
+@keyframes moveGif {
+    0% {
+        left: -100px; /* 起始位置 (左) */
+        transform: scaleX(-1); /* 反轉方向 */
+    }
+    50% {
+        left: calc(100% - 100px); /* 終止位置 (右) */
+        transform: scaleX(-1); /* 反轉方向 */
+    }
+    50.01% {
+        transform: scaleX(1); /* 恢復原始方向 */
+    }
+    100% {
+        left: -100px; /* 回到起始位置 */
+        transform: scaleX(1); /* 恢復原始方向 */
+    }
+}
